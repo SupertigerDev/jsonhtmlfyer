@@ -1,5 +1,5 @@
 # jsonhtmlfyer
-HTML to JSON. Will be used in Nertivia (nertivia.tk) for html embeds for bots.
+JSON TO HTML. Will be used in Nertivia (nertivia.tk) for html embeds for bots.
 
 # Usage
 ```js
@@ -13,5 +13,9 @@ const res = jsonToHtml({
     },
 }, "IMAGEPROXY.com/")
 
-console.log(res) // -> <div style="background-image: url(IMAGEPROXY.com/google.com/owo.png);"></div>
+console.log(res)
+```
+Will output:
+```
+<div style="background-image: url(IMAGEPROXY.com/google.com/owo.png);"></div>
 ```
