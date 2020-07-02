@@ -1,6 +1,6 @@
 {
   "name": "jsonhtmlfyer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JSON TO HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,5 +20,13 @@
     "@types/node": "^13.13.0",
     "ttypescript": "^1.5.10",
     "typescript": "^3.9.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supertiger1234/jsonhtmlfyer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/supertiger1234/jsonhtmlfyer/issues"
+  },
+  "homepage": "https://github.com/supertiger1234/jsonhtmlfyer#readme"
 }
