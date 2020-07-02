@@ -1,6 +1,9 @@
 # jsonhtmlfyer
 JSON TO HTML. Will be used in Nertivia (nertivia.tk) for html embeds for bots.
 
+# Install
+```npm i jsonhtmlfyer```
+
 # Usage
 ```js
 const { jsonToHtml } = require("jsonhtmlfyer");
@@ -16,6 +19,6 @@ const res = jsonToHtml({
 console.log(res)
 ```
 Will output:
-```
+```html
 <div style="background-image: url(IMAGEPROXY.com/google.com/owo.png);"></div>
 ```
