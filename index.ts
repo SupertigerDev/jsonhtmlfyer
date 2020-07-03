@@ -5,11 +5,8 @@ let doc: Document;
 if (typeof document === "undefined") {
 	try {
 		const { JSDOM } = require("jsdom")
-		console.log(JSDOM)
 		doc = (new JSDOM().window).document
-	} catch(err) {
-		throw new Error("Please run 'npm i jsdom'")
-	}
+	} catch(err) {}
 } else {
 	doc = document
 }
