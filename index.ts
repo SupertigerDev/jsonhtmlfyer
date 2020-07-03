@@ -40,6 +40,20 @@ interface Attributes {
 const iAttributes = keys<Attributes>();
 
 
+
+function sanitize(string: string) {
+	const map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#x27;',
+		"/": '&#x2F;',
+	};
+	const reg = /[&<>"'/]/ig;
+	return string.replace(reg, (match: string)=>(map[match]));
+}
+
 export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 	if (!doc) throw new Error("Please run 'npm i jsdom'")
 	if (!json.tag) throw new Error("Tag is required.")
@@ -85,7 +99,7 @@ export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 	}
 
 	if (json.content) {
-		element.innerHTML = encodeURI(json.content as string);
+		element.innerHTML = sanitize(json.content as string);
 	}
 	return element.outerHTML;
 
