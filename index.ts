@@ -59,13 +59,17 @@ export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 	if (!json.tag) throw new Error("Tag is required.")
 	if (!Object.keys(Tags).includes(json.tag)) throw new Error("Invalid Tag: " + json.tag)
 	const element = doc.createElement(json.tag)
+
 	if (json.attributes) {
 		const attributeKeys = Object.keys(json.attributes);
 		for (let i = 0; i < attributeKeys.length; i++) {
 			const attrKey: any  = attributeKeys[i];
 			if (!iAttributes.includes(attrKey)) throw new Error("Invalid Attribute: " + attrKey)
+
 			if (json.tag.toLowerCase() === "img" && attrKey.toLowerCase() === "src") {
 				element.setAttribute(attrKey, imageProxyUrl + encodeURIComponent(json.attributes[attrKey]));
+			} else if (attrKey.toLowerCase() === "href" && !json.attributes[attrKey].toLowerCase().startsWith("http")) {
+				element.setAttribute(attrKey, "https://" + json.attributes[attrKey]);
 			} else {
 				element.setAttribute(attrKey, json.attributes[attrKey]);
 			}
