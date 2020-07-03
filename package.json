@@ -1,6 +1,6 @@
 {
   "name": "jsonhtmlfyer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "JSON TO HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "i": "^0.3.6",
-    "jsdom": "^16.2.2",
     "npm": "^6.14.5",
     "ts-transformer-keys": "^0.4.2"
   },

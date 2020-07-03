@@ -3,6 +3,8 @@ JSON TO HTML. Will be used in Nertivia (nertivia.tk) for html embeds for bots.
 
 # Install
 ```npm i jsonhtmlfyer```
+Note: If youre using this in the server (no renderer), install this aswell:
+```npm i jsdom```
 
 # Usage
 ```js
