@@ -65,7 +65,7 @@ export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 			const attrKey: any  = attributeKeys[i];
 			if (!iAttributes.includes(attrKey)) throw new Error("Invalid Attribute: " + attrKey)
 			if (json.tag.toLowerCase() === "img" && attrKey.toLowerCase() === "src") {
-				element.setAttribute(attrKey, imageProxyUrl + json.attributes[attrKey]);
+				element.setAttribute(attrKey, imageProxyUrl + encodeURI(json.attributes[attrKey]));
 			} else {
 				element.setAttribute(attrKey, json.attributes[attrKey]);
 			}
@@ -77,7 +77,7 @@ export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 			const styleKey = styleKeys[s];
 			const styleVal = json.styles[styleKey];
 			if (styleKey.toLowerCase() === "backgroundimage") {
-				element.style[styleKey] = `url(${imageProxyUrl + styleVal})`;
+				element.style[styleKey] = `url(${imageProxyUrl + encodeURI(styleVal)})`;
 			} else {
 				element.style[styleKey] = styleVal;
 			}
