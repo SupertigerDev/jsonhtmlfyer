@@ -103,6 +103,7 @@ export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 	}
 
 	if (json.content) {
+		element.classList.add("content")
 		element.innerHTML = sanitize(json.content as string);
 	}
 	return element.outerHTML;
