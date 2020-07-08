@@ -1,5 +1,6 @@
 
 import { keys } from 'ts-transformer-keys';
+import { triggerAsyncId } from 'async_hooks';
 
 let doc: Document;
 if (typeof document === "undefined") {
@@ -20,8 +21,9 @@ export interface JsonInput {
 	attributes?: Attributes,
 	content?: JsonInput | JsonInput[] | string
 }
-type Tags = 'div' |'img' |'span'|'strong'|'a'
+const tags = ['div', 'img', 'span', 'strong', 'a'] as const
 
+type Tags = typeof tags[number];
 
 interface Attributes {
 	href: string,
@@ -52,7 +54,7 @@ function sanitize(string: string) {
 export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 	if (!doc) throw new Error("Please run 'npm i jsdom'")
 	if (!json.tag) throw new Error("Tag is required.")
-	if (!Object.keys(Tags).includes(json.tag)) throw new Error("Invalid Tag: " + json.tag)
+	if (!Object.keys(tags).includes(json.tag)) throw new Error("Invalid Tag: " + json.tag)
 	const element = doc.createElement(json.tag)
 
 	if (json.attributes) {
