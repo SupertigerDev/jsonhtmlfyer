@@ -20,13 +20,8 @@ export interface JsonInput {
 	attributes?: Attributes,
 	content?: JsonInput | JsonInput[] | string
 }
-enum Tags {
-	div = 'div',
-	img = 'img',
-	span = 'span',
-	strong = 'strong',
-	a = 'a'
-}
+type Tags = 'div' |'img' |'span'|'strong'|'a'
+
 
 interface Attributes {
 	href: string,
