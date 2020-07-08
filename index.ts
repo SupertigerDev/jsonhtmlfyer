@@ -16,9 +16,9 @@ if (typeof document === "undefined") {
 
 export interface JsonInput {
 	tag: Tags,
-	styles: CSSStyleDeclaration,
-	attributes: Attributes,
-	content: JsonInput | JsonInput[] | string
+	styles?: CSSStyleDeclaration,
+	attributes?: Attributes,
+	content?: JsonInput | JsonInput[] | string
 }
 enum Tags {
 	div = 'div',
