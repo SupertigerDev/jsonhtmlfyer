@@ -17,7 +17,7 @@ if (typeof document === "undefined") {
 
 export interface JsonInput {
 	tag: Tags,
-	styles?: CSSStyleDeclaration,
+	styles?: Partial<CSSStyleDeclaration>,
 	attributes?: Attributes,
 	content?: JsonInput | JsonInput[] | string
 }
@@ -26,9 +26,9 @@ const tags = ['div', 'img', 'span', 'strong', 'a'] as const
 type Tags = typeof tags[number];
 
 interface Attributes {
-	href: string,
-	src: string,
-	color: string,
+	href?: string,
+	src?: string,
+	color?: string,
 }
 
 
