@@ -10,15 +10,13 @@
   "author": "supertiger1234",
   "license": "ISC",
   "dependencies": {
-    "i": "^0.3.6",
-    "npm": "^6.14.5",
     "ts-transformer-keys": "^0.4.2"
   },
   "devDependencies": {
     "@types/jsdom": "^16.2.3",
     "@types/node": "^13.13.0",
     "ttypescript": "^1.5.10",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "repository": {
     "type": "git",
