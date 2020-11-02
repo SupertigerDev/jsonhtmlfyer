@@ -54,7 +54,7 @@ function sanitize(string: string) {
 export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 	if (!doc) throw new Error("Please run 'npm i jsdom'")
 	if (!json.tag) throw new Error("Tag is required.")
-	if (!Object.keys(tags).includes(json.tag)) throw new Error("Invalid Tag: " + json.tag)
+	if (!tags.includes(json.tag)) throw new Error("Invalid Tag: " + json.tag)
 	const element = doc.createElement(json.tag)
 
 	if (json.attributes) {
