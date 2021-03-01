@@ -54,6 +54,16 @@ const allowedCssProperties = [
 	"transition",
 	"transform",
 	"textDecoration",
+	"padding",
+	"padding-top",
+	"padding-bottom",
+	"padding-left",
+	"padding-right",
+	"margin",
+	"margin-top",
+	"margin-bottom",
+	"margin-left",
+	"margin-right",
 ].map(p => p.toLowerCase())
 
 
