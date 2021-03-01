@@ -55,15 +55,15 @@ const allowedCssProperties = [
 	"transform",
 	"textDecoration",
 	"padding",
-	"padding-top",
-	"padding-bottom",
-	"padding-left",
-	"padding-right",
+	"paddingTop",
+	"paddingBottom",
+	"paddingLeft",
+	"paddingRight",
 	"margin",
-	"margin-top",
-	"margin-bottom",
-	"margin-left",
-	"margin-right",
+	"marginTop",
+	"marginBottom",
+	"marginLeft",
+	"marginRight",
 ].map(p => p.toLowerCase())
 
 
