@@ -1,7 +1,5 @@
 
 import { keys } from 'ts-transformer-keys';
-import { triggerAsyncId } from 'async_hooks';
-
 let doc: Document;
 if (typeof document === "undefined") {
 	try {
@@ -45,12 +43,17 @@ const allowedCssProperties = [
 	"right",
 	"width",
 	"height",
+	"minHeight",
+	"minWidth",
+	"maxHeight",
+	"maxWidth",
 	"border",
 	"borderRadius",
 	"boxShadow",
 	"textShadow",
 	"overflow",
 	"textOverflow",
+	"overflowWrap",
 	"transition",
 	"transform",
 	"textDecoration",
@@ -64,6 +67,18 @@ const allowedCssProperties = [
 	"marginBottom",
 	"marginLeft",
 	"marginRight",
+	"flex",
+	"flexShrink",
+	"flexDirection",
+	"gap",
+	"flexGrow",
+	"alignItems",
+	"alignContent",
+	"alignSelf",
+	"whiteSpace",
+	"fontFamily",
+	"zIndex"
+
 ].map(p => p.toLowerCase())
 
 
