@@ -30,6 +30,31 @@ interface Attributes {
 	src?: string,
 	color?: string,
 }
+const allowedCssProperties = [
+	"display",
+	"position",
+	"backgroundColor",
+	"backgroundImage",
+	"backgroundRepeat",
+	"backgroundSize",
+	"backgroundPosition",
+	"color",
+	"up",
+	"bottom",
+	"left",
+	"right",
+	"width",
+	"height",
+	"border",
+	"borderRadius",
+	"boxShadow",
+	"textShadow",
+	"overflow",
+	"textOverflow",
+	"transition",
+	"transform",
+	"textDecoration",
+].map(p => p.toLowerCase())
 
 
 
@@ -77,6 +102,9 @@ export function jsonToHtml(json: JsonInput, imageProxyUrl: string = "") {
 		for (let s = 0; s < styleKeys.length; s++) {
 			const styleKey = styleKeys[s];
 			const styleVal = json.styles[styleKey];
+			if (!allowedCssProperties.includes(styleKey.toLowerCase())) {
+				throw new Error("Invalid CSS Property: " + styleKey)
+			}
 			if (styleKey.toLowerCase() === "backgroundimage") {
 				element.style[styleKey] = `url(${imageProxyUrl + encodeURIComponent(styleVal)})`;
 			} else {
