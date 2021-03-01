@@ -37,7 +37,7 @@ const allowedCssProperties = [
 	"backgroundSize",
 	"backgroundPosition",
 	"color",
-	"up",
+	"top",
 	"bottom",
 	"left",
 	"right",
@@ -80,7 +80,10 @@ const allowedCssProperties = [
 	"alignSelf",
 	"whiteSpace",
 	"fontFamily",
-	"zIndex"
+	"fontSize",
+	"fontWeight",
+	"zIndex",
+	"textAlign"
 
 ].map(p => p.toLowerCase())
 
