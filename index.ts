@@ -83,7 +83,11 @@ const allowedCssProperties = [
 	"fontSize",
 	"fontWeight",
 	"zIndex",
-	"textAlign"
+	"textAlign",
+	"borderColor",
+	"verticalAlign",
+	"lineHeight"
+
 
 ].map(p => p.toLowerCase())
 
