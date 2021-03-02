@@ -87,7 +87,8 @@ const allowedCssProperties = [
 	"borderColor",
 	"verticalAlign",
 	"lineHeight",
-	"backdropFilter"
+	"backdropFilter",
+	"backgroundClip"
 
 
 ].map(p => p.toLowerCase())
